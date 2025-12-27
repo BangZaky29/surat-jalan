@@ -1,4 +1,4 @@
-import { FileText } from 'lucide-react';
+import LogoNuansaLegal from '../assets/naunsaLegal.jpeg';
 
 const Header = () => {
   return (
@@ -20,15 +20,20 @@ const Header = () => {
           }}>
             <div style={{
               background: 'white',
-              padding: '0.75rem',
+              padding: '0.5rem',
               borderRadius: '0.5rem',
               boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center',
-              color: '#d97706'
+              justifyContent: 'center'
             }}>
-              <FileText size={40} />
+              <a href="https://www.nuansalegal.id/" target="_blank" rel="noopener noreferrer">
+                <img 
+                  src={LogoNuansaLegal} 
+                  alt="Nuansa Legal" 
+                  style={{ width: '44px', height: '44px', objectFit: 'cover', borderRadius: '0.375rem' }} 
+                />
+              </a>
             </div>
             <div>
               <h1 style={{
