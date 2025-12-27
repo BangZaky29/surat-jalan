@@ -1,105 +1,209 @@
+/* ========================================
+   MOBILE RESPONSIVE STYLES
+   ======================================== */
+
 @media (max-width: 640px) {
+  /* Hide elements */
   .mobile-hidden {
     display: none !important;
   }
+
+  /* Base adjustments */
   body {
     line-height: 1.5;
   }
+
   .container {
     padding: 0 0.5rem;
   }
+
   .main-content {
-    padding: 1rem 0;
+    padding: 1rem 0 5rem 0; /* Extra bottom padding untuk fixed button */
   }
+
   .content-grid {
     grid-template-columns: 1fr;
     gap: 0.75rem;
   }
-  /* Center preview on mobile */
-  .preview-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-  }
+
+  /* === FORM MOBILE STYLES === */
   .form-section {
     border-width: 1px;
   }
+
   .section-header {
     padding: 0.75rem;
   }
+
   .section-header h2 {
     font-size: 1rem;
   }
+
   .section-header-left svg {
     width: 18px;
     height: 18px;
   }
+
   .section-body {
     padding: 0.75rem;
     gap: 0.5rem;
   }
+
   .form-label {
     font-size: 0.8rem;
   }
+
   .form-input,
   .form-select,
   .form-textarea {
     font-size: 0.9rem;
     padding: 0.6rem 0.75rem;
   }
+
   .form-row {
     grid-template-columns: 1fr;
   }
+
   .logo-upload-container {
     padding: 1rem;
   }
+
   .btn-primary {
     font-size: 0.95rem;
     padding: 0.75rem 1rem;
   }
+
   .btn-add {
     font-size: 0.9rem;
   }
+
+  /* === PREVIEW MOBILE STYLES (DIPERBAIKI) === */
+  
+  /* Preview container mobile */
   .preview-container {
     padding: 0.75rem;
     border-width: 1px;
     max-height: none;
-    overflow-y: visible;
+    overflow: visible;
+    /* Centering container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+
   .preview-header {
+    width: 100%;
     margin-bottom: 0.75rem;
     padding-bottom: 0.5rem;
   }
+
+  /* PERBAIKAN UTAMA: Preview content mobile - RAPI & CENTER */
   .preview-content {
-    width: 210mm;
-    min-height: 297mm;
-    transform: scale(0.44);
-    transform-origin: top center;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    /* Dimensi tetap A4 */
+    width: 210mm !important;
+    min-height: 297mm !important;
+    
+    /* Scaling untuk mobile - lebih besar dari sebelumnya */
+    transform: scale(0.45) !important;
+    transform-origin: top center !important;
+    
+    /* Perfect centering */
+    margin: 0 auto !important;
+    
+    /* Box model */
+    box-sizing: border-box !important;
+    padding: 1.5rem 2rem !important;
+    
+    /* Visual */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08) !important;
+    background: white !important;
+    
+    /* Overflow handling */
+    overflow: visible !important;
   }
+
+  /* Wrapper untuk preview content */
+  .preview-wrapper {
+    width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    /* Compensate scale untuk menghilangkan space kosong */
+    margin-bottom: -55%;
+  }
+
+  /* Info grid mobile */
   .info-grid {
     grid-template-columns: 1fr;
     gap: 0.5rem;
   }
+
+  /* Surat title mobile */
   .surat-title {
     font-size: 16px;
     margin: 0.75rem 0;
   }
+
+  /* Table mobile */
   .surat-table {
     font-size: 9px;
   }
+
+  /* Signature mobile - 2 kolom */
   .signature-section {
     grid-template-columns: 1fr 1fr;
     gap: 0.5rem;
   }
-}
-@media (max-width: 480px) {
-  .preview-content {
-    transform: scale(0.40);
+
+  /* Fixed bottom button */
+  .fixed.bottom-0 {
+    padding-bottom: env(safe-area-inset-bottom);
   }
+}
+
+/* === EXTRA SMALL MOBILE (< 480px) === */
+@media (max-width: 480px) {
+  /* Scaling lebih kecil untuk layar sangat kecil */
+  .preview-content {
+    transform: scale(0.38) !important;
+  }
+
+  .preview-wrapper {
+    margin-bottom: -62%;
+  }
+
+  /* Signature 1 kolom untuk layar sangat kecil */
   .signature-section {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .signature-box {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* === LANDSCAPE MOBILE === */
+@media (max-width: 900px) and (orientation: landscape) {
+  .preview-content {
+    transform: scale(0.55) !important;
+  }
+
+  .preview-wrapper {
+    margin-bottom: -45%;
+  }
+}
+
+/* === PRINT MODE MOBILE === */
+@media print {
+  /* Pastikan mobile juga print dengan baik */
+  .preview-content {
+    transform: none !important;
+    width: 210mm !important;
+    margin: 0 auto !important;
+  }
+
+  .preview-wrapper {
+    margin-bottom: 0 !important;
   }
 }

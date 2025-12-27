@@ -260,6 +260,7 @@ body {
   border: 2px solid #fcd34d;
   max-height: 85vh;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .preview-header {
@@ -291,11 +292,11 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Responsive Scaling - Desktop/Tablet */
 @media (max-width: 1280px) {
   .preview-content {
     transform: scale(0.75);
     transform-origin: top center;
-    margin-bottom: -25%; /* Compensate for empty space after scaling */
   }
 }
 
@@ -303,24 +304,10 @@ body {
   .preview-content {
     transform: scale(0.6);
     transform-origin: top center;
-    margin-bottom: -40%;
   }
 }
 
-@media (max-width: 640px) {
-  .preview-content {
-    transform: scale(0.42);
-    transform-origin: top center;
-    margin-bottom: -140%; /* Significant compensation needed for small screens */
-    margin-left: -1rem; /* Adjust if needed */
-    margin-right: -1rem;
-  }
-  
-  .preview-container {
-    padding: 0.5rem;
-    overflow-x: hidden;
-  }
-}
+/* Mobile scaling dihapus dari sini, dipindah ke mobile.css */
 
 /* === SURAT JALAN STYLES === */
 .surat-header-box {
@@ -410,24 +397,45 @@ body {
   padding-top: 0.25rem;
 }
 
-/* === PRINT STYLES === */
+/* === PRINT STYLES (DIPERBAIKI) === */
 @media print {
+  /* Reset semua yang tidak perlu */
   body {
-    background: white;
+    background: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: grid !important;
+    place-items: center !important;
   }
   
+  /* Sembunyikan elemen non-print */
   .no-print {
     display: none !important;
   }
   
+  /* Reset container print */
+  .app-wrapper,
+  .main-content,
+  .container,
+  .content-grid {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+    background: transparent !important;
+  }
+  
+  /* Preview container untuk print */
   .preview-container {
     box-shadow: none !important;
     border: none !important;
     padding: 0 !important;
     max-height: none !important;
     overflow: visible !important;
+    margin: 0 !important;
+    background: transparent !important;
   }
   
+  /* Preview wrapper */
   .preview-wrapper {
     border: none !important;
     box-shadow: none !important;
@@ -436,29 +444,60 @@ body {
     margin: 0 !important;
   }
 
+  /* Sembunyikan header preview */
   .preview-header {
     display: none !important;
   }
   
+  /* PERBAIKAN UTAMA: Preview content untuk print - PERFECT CENTER */
   .preview-content {
+    /* Reset semua styling */
     box-shadow: none !important;
-    border: none;
-    margin: 0 !important;
+    border: none !important;
+    background: white !important;
+    
+    /* Dimensi exact A4 */
     width: 210mm !important;
-    height: 297mm !important;
-    padding: 15mm !important;
-    box-sizing: border-box !important;
+    height: auto !important;
+    min-height: 297mm !important;
+    
+    /* Padding internal */
+    padding: 15mm 15mm 20mm 15mm !important;
+    
+    /* Hapus transform untuk print */
     transform: none !important;
+    transform-origin: initial !important;
+    
+    /* Perfect centering */
+    margin: 0 auto !important;
+    display: block !important;
+    
+    /* Print settings */
     page-break-after: avoid;
+    page-break-inside: avoid;
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    color-adjust: exact;
+    
+    /* Box sizing */
+    box-sizing: border-box !important;
+    
+    /* Position */
+    position: relative !important;
+    left: 0 !important;
+    right: 0 !important;
   }
 
+  /* Page settings untuk perfect A4 */
   @page {
-    size: A4;
-    margin: 0;
+    size: A4 portrait;
+    margin: 0mm;
+  }
+  
+  /* Pastikan semua child elements print dengan baik */
+  .preview-content * {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
   }
 }
 
