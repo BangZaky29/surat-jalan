@@ -15,9 +15,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #fef3c7 0%, #ffffff 50%, #fef3c7 100%);
+  background: var(--gradient-secondary);
   min-height: 100vh;
-  color: #1f2937;
+  color: var(--text-dark);
   line-height: 1.6;
 }
 
@@ -64,7 +64,7 @@ body {
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  border: 2px solid #fde68a;
+  border: 2px solid var(--blue-200);
   transition: all 0.3s ease;
 }
 
@@ -79,16 +79,14 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  background: linear-gradient(90deg, #fef3c7 0%, #fde68a 100%);
+  background: var(--gradient-secondary);
   border: none;
   cursor: pointer;
   transition: all 0.2s ease;
   font-family: inherit;
 }
 
-.section-header:hover {
-  background: linear-gradient(90deg, #fde68a 0%, #fcd34d 100%);
-}
+.section-header:hover { background: var(--gradient-primary); }
 
 .section-header-left {
   display: flex;
@@ -97,13 +95,13 @@ body {
 }
 
 .section-header-left svg {
-  color: #d97706;
+  color: var(--blue-600);
 }
 
 .section-header h2 {
   font-size: 1.125rem;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--text-dark);
 }
 
 .section-body {
@@ -124,7 +122,7 @@ body {
   display: block;
   font-size: 0.875rem;
   font-weight: 500;
-  color: #374151;
+  color: var(--gray-700);
   margin-bottom: 0.25rem;
 }
 
@@ -133,7 +131,7 @@ body {
 .form-textarea {
   width: 100%;
   padding: 0.5rem 0.75rem;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--gray-300);
   border-radius: 0.375rem;
   font-size: 0.875rem;
   font-family: inherit;
@@ -145,8 +143,8 @@ body {
 .form-select:focus,
 .form-textarea:focus {
   outline: none;
-  border-color: #fbbf24;
-  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.1);
+  border-color: var(--blue-400);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
 }
 
 .form-row {
@@ -163,18 +161,18 @@ body {
 
 /* === LOGO UPLOAD === */
 .logo-upload-container {
-  border: 2px dashed #fbbf24;
+  border: 2px dashed var(--blue-300);
   border-radius: 0.5rem;
   padding: 1.5rem;
   text-align: center;
-  background: #fffbeb;
+  background: var(--blue-50);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .logo-upload-container:hover {
-  border-color: #f59e0b;
-  background: #fef3c7;
+  border-color: var(--blue-400);
+  background: var(--blue-100);
 }
 
 .logo-preview {
@@ -187,7 +185,7 @@ body {
 /* === BUTTONS === */
 .btn-primary {
   width: 100%;
-  background: linear-gradient(90deg, #fbbf24 0%, #f59e0b 100%);
+  background: var(--gradient-primary);
   color: white;
   font-weight: 600;
   padding: 0.75rem 1.5rem;
@@ -205,14 +203,14 @@ body {
 }
 
 .btn-primary:hover {
-  background: linear-gradient(90deg, #f59e0b 0%, #d97706 100%);
+  background: var(--gradient-secondary);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
   transform: scale(1.05);
 }
 
 .btn-add {
   width: 100%;
-  background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+  background-color: var(--blue-600);
   color: white;
   font-weight: 600;
   padding: 0.65rem 1rem;
@@ -230,12 +228,12 @@ body {
 }
 
 .btn-add:hover {
-  background: linear-gradient(90deg, #059669 0%, #047857 100%);
+  background-color: var(--blue-700);
 }
 
 .btn-remove {
-  background: #ef4444;
-  color: white;
+  background: var(--purple-300);
+  color: #fff;
   border: none;
   border-radius: 0.25rem;
   padding: 0.35rem 0.75rem;
@@ -248,7 +246,7 @@ body {
 }
 
 .btn-remove:hover {
-  background: #dc2626;
+  background: var(--purple-400);
 }
 
 /* === PREVIEW CONTAINER === */
@@ -257,7 +255,7 @@ body {
   border-radius: 0.5rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
-  border: 2px solid #fcd34d;
+  border: 2px solid var(--blue-200);
   max-height: 85vh;
   overflow-y: auto;
   overflow-x: hidden;
@@ -269,11 +267,11 @@ body {
   justify-content: space-between;
   margin-bottom: 1rem;
   padding-bottom: 0.75rem;
-  border-bottom: 2px solid #fde68a;
+  border-bottom: 2px solid var(--blue-200);
 }
 
 .preview-badge {
-  background: #fef3c7;
+  background: var(--purple-50);
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
 }
@@ -524,12 +522,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #fbbf24;
+  background: var(--blue-300);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #f59e0b;
+  background: var(--blue-300);
 }
 
 /* === ITEM CARD === */
@@ -538,7 +536,7 @@ body {
   border-radius: 0.5rem;
   padding: 1rem;
   margin-bottom: 1rem;
-  background: #fffbeb;
+  background: var(--blue-100);
 }
 
 .item-card-header {

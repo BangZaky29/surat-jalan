@@ -1,9 +1,9 @@
-import LogoNuansaLegal from '../assets/naunsaLegal.jpeg';
+import LogoNuansaLegal from '../assets/NS_white_01.png';
 
 const Header = () => {
   return (
     <header className="no-print" style={{
-      background: 'linear-gradient(90deg, #fbbf24 0%, #f59e0b 100%)',
+      background: 'var(--gradient-primary)',
       boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
       padding: '1.5rem 0'
     }}>
@@ -31,7 +31,7 @@ const Header = () => {
                 <img 
                   src={LogoNuansaLegal} 
                   alt="Nuansa Legal" 
-                  style={{ width: '44px', height: '44px', objectFit: 'cover', borderRadius: '0.375rem' }} 
+                  style={{ width: '80px', height: '80px', objectFit: 'cover', borderRadius: '0.375rem' }} 
                 />
               </a>
             </div>
@@ -39,14 +39,14 @@ const Header = () => {
               <h1 style={{
                 fontSize: '1.875rem',
                 fontWeight: '700',
-                color: 'white',
+                color: 'var(--text-dark)',
                 marginBottom: '0.25rem'
               }}>
                 Generator Surat Jalan
               </h1>
               <p style={{
                 fontSize: '0.875rem',
-                color: '#fef3c7'
+                color: 'var(--gray-600)'
               }}>
                 Buat surat jalan pengiriman barang dengan mudah
               </p>

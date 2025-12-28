@@ -32,7 +32,7 @@ const PreviewSection = ({ formData }) => {
             Preview Surat Jalan
           </h2>
           <div className="preview-badge">
-            <span style={{ fontSize: '0.875rem', fontWeight: '500', color: '#b45309' }}>
+            <span style={{ fontSize: '0.875rem', fontWeight: '500', color: 'var(--blue-400)' }}>
               Live Preview
             </span>
           </div>

@@ -120,8 +120,8 @@ const FormSection = ({ formData, setFormData }) => {
                     />
                   ) : (
                     <div>
-                      <Upload size={32} style={{ margin: '0 auto', color: '#d97706' }} />
-                      <p style={{ marginTop: '0.5rem', color: '#d97706' }}>
+                      <Upload size={32} style={{ margin: '0 auto', color: 'var(--blue-500)' }} />
+                      <p style={{ marginTop: '0.5rem', color: 'var(--blue-500)' }}>
                         Klik untuk upload logo
                       </p>
                     </div>
