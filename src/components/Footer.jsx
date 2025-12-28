@@ -20,7 +20,7 @@ const Footer = () => {
             color: 'var(--gray-600)',
             marginTop: '0.25rem'
           }}>
-            © 2025 nuansalegal.id. All rights reserved.
+            © 2022 Nuansa Solution | All rights reserved.
           </p>
         </div>
       </div>
